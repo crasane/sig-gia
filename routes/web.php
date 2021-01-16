@@ -1,0 +1,30 @@
+<?php
+
+use App\TravelPackage;
+use App\Order;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+
+    $TravelPackage = TravelPackage::all();
+
+    return view('welcome', ["data"  => $TravelPackage]);
+});
+
+Route::get('/map', function () {
+
+    $TravelPackage = TravelPackage::all();
+
+    
+    return view('map', ["data"  => $TravelPackage]);
+});
