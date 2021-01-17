@@ -9,4 +9,6 @@ class Order extends Model
     protected $fillable     = [];
     protected $table        = "orders";
     protected $primaryKey   = "id";
+
+    public $timestamps = false;
 }

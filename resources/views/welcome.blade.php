@@ -155,22 +155,22 @@ http://www.tooplate.com/view/2095-level
                     <div class="row">
                         <div class="col-xs-12 col-sm-12">
                             <div class="tm-bg-white tm-p-4">
-                                <form action="index.html" method="post" class="contact-form">
+                                <form action="/api/add-order" method="post" class="contact-form">
                                     <div class="form-group">
-                                        <select class="form-control">
+                                        <select class="form-control" name="travel_package_id">
                                             @foreach($data as $item)
-                                                <option>{{ $item->name }}</option>
+                                                <option value="{{ $item->id }}">{{ $item->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name" required/>
+                                        <input type="text" id="contact_name" name="name" class="form-control" placeholder="Name" required/>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" id="contact_subject" name="contact_subject" class="form-control" placeholder="Phone"  required/>
+                                        <input type="numeric" id="contact_subject" name="phone" class="form-control" placeholder="Phone"  required/>
                                     </div>
                                     <div class="form-group">
-                                        <textarea id="contact_message" name="contact_message" class="form-control" rows="9" placeholder="Message" required></textarea>
+                                        <textarea id="contact_message" name="message" class="form-control" rows="9" placeholder="Message" required></textarea>
                                     </div>
                                     <button type="submit" class="btn btn-primary tm-btn-primary">Book Now</button>
                                 </form>
